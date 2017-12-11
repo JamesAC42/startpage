@@ -1,0 +1,214 @@
+{
+	"school": {
+		"name": "school",
+		"img-name": "book",
+		"img-color": "blue",
+		"color": "#1A85D0",
+		"links": [
+			{
+				"item": "Home",
+				"url": "http://www.lschs.org"
+			},
+			{
+				"item": "Quizlet",
+				"url": "https://www.quizlet.com"
+			},
+			{
+				"item": "Cengage",
+				"url": "https://myhome.cengagebrain.com/cb/dashboard.htm?codeType=ACCESS_CODE&courseType=null"
+			},
+			{
+				"item": "WordCounter",
+				"url": "https://wordcounter.net/"
+			},
+			{
+				"item": "WebAssign",
+				"url": "http://www.webassign.net/v4cgi/student.pl?UserPass=b09868c77b0304a5e7660a1173c7e68a"
+			},
+			{
+				"item": "Symbolab",
+				"url": "https://www.symbolab.com/"
+			},
+			{
+				"item": "Slader",
+				"url": "http://www.slader.com/textbook/9780133178579-calculus-graphical-numerical-algebraic-4th-edition/"
+			},
+			{
+				"item": "PhysicsClassroom",
+				"url": "http://www.physicsclassroom.com/"
+			}
+		]
+	},
+	"tech": {
+		"name": "tech",
+		"img-name": "terminal",
+		"img-color": "green",
+		"color": "#27BF3C",
+		"links": [
+			{
+				"item": "Ideone",
+				"url": "http://ideone.com/"
+			},
+			{
+				"item": "Github",
+				"url": "https://www.github.com"
+			},
+			{
+				"item": "BoxShadow",
+				"url": "http://www.cssmatic.com/box-shadow"
+			},
+			{
+				"item": "ColorPicker",
+				"url": "http://www.w3schools.com/colors/colors_picker.asp"
+			},
+			{
+				"item": "Kodit",
+				"url": "http://kodhus.com/kodity/"
+			},
+			{
+				"item": "Unicode",
+				"url": "https://www.w3schools.com/charsets/ref_utf_symbols.asp"
+			},
+			{
+				"item": "InstallGentoo",
+				"url": "https://wiki.installgentoo.com/index.php/Main_Page"
+			},
+			{
+				"item": "Icons8",
+				"url": "https://icons8.com/"
+			},
+			{
+				"item": "Analytics",
+				"url": "https://analytics.google.com/analytics/web/#realtime/rt-overview/a75497871w113966403p119058620/"
+			},
+			{
+				"item": "SICP",
+				"url": "https://mitpress.mit.edu/sicp/"
+			},
+			{
+				"item": "G",
+				"url": "example.com"
+			}
+		]
+	},
+	"misc": {
+		"name": "misc",
+		"img-name": "puzzle",
+		"img-color": "orange",
+		"color": "#EE7204",
+		"links": [
+			{
+				"item": "zType",
+				"url": "http://zty.pe/"
+			},
+			{
+				"item": "TypingClub",
+				"url": "https://www.typingclub.com/"
+			},
+			{
+				"item": "Snake",
+				"url": "http://rodnam.nfshost.com/snake"
+			},
+			{
+				"item": "LOH",
+				"url": "https://archive.is/LRe05"
+			},
+			{
+				"item": "VidConverter",
+				"url": "https://www.onlinevideoconverter.com/video-converter"
+			},
+			{
+				"item": "LibGen",
+				"url": "http://libgen.io/"
+			},
+			{
+				"item": "Youtube",
+				"url": "https://www.youtube.com"
+			},
+			{
+				"item": "a",
+				"url": "https://4chan.org/a/"
+			},
+			{
+				"item": "g",
+				"url": "https://4chan.org/g/"
+			},
+			{
+				"item": "Soundcloud",
+				"url": "https://soundcloud.com"
+			}
+		]
+	},
+	"nip": {
+		"name": "nip",
+		"img-name": "japan",
+		"img-color": "red",
+		"color": "#F53737",
+		"links": [
+			{
+				"item": "Kana",
+				"url": "http://realkana.com/"
+			},
+			{
+				"item": "TaeKim",
+				"url": "http://www.guidetojapanese.org/learn/"
+			},
+			{
+				"item": "Radicals",
+				"url": "https://kanjialive.com/214-traditional-kanji-radicals/"
+			},
+			{
+				"item": "DJT",
+				"url": "https://djtguide.neocities.org/guide.html"
+			},
+			{
+				"item": "Particles",
+				"url": "https://en.wikipedia.org/wiki/Japanese_particles#ni_wa"
+			},
+			{
+				"item": "Madokami",
+				"url": "https://manga.madokami.al/"
+			},
+			{
+				"item": "RadicalSearch",
+				"url": "http://kanji.sljfaq.org/mr-old.html"
+			},
+			{
+				"item": "Jisho",
+				"url": "http://jisho.org/"
+			},
+			{
+				"item": "Orchestr/a/",
+				"url": "http://jibunwooo.com/"
+			},
+			{
+				"item": "JLPT",
+				"url": "http://jlpt.jp/e/index.cgi"
+			},
+			{
+				"item": "AnkiWeb",
+				"url": "https://ankiweb.net/decks/"
+			},
+			{
+				"item": "Nyaa",
+				"url": "https://nyaa.si"
+			}
+		]
+	},
+	"settings": {
+		"name": "settings",
+		"img-name": "settings",
+		"img-color": "purple",
+		"color": "#764CFD",
+		"links": [
+			{
+				"item": "Darksky.net",
+				"url": "https://darksky.net"
+			},
+			{
+				"item": "NewsAPI",
+				"url": "https://newsapi.org"
+			}
+		]
+	}
+}

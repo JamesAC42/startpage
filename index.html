@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="icon" type="image/png" href="./icons/favicon-16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="./icons/favicon-32.png" sizes="32x32">
+</head>
+<body>
+	<div class="blur"></div>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="navbar-glow"></div>
+			<div class="icons-container">
+				<a id="school-tab" href="#" class="icon">
+					<img src="./icons/book-blue.png" alt="">
+				</a>
+				<a id="tech-tab" href="#" class="icon">
+					<img src="./icons/terminal-white.png" alt="">
+				</a>
+				<a id="misc-tab" href="#" class="icon">
+					<img src="./icons/puzzle-white.png" alt="">
+				</a>
+				<a id="nip-tab" href="#" class="icon">
+					<img src="./icons/japan-white.png" alt="">
+				</a>
+				<a id="settings-tab" href="#" class="icon">
+					<img src="./icons/settings-white.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="testing"></div>
+	<div class="windows-container">
+		<div class="windows-container-inner">
+			<div id="links" class="window">
+				<div class="window-inner">
+					<div class="title-bar">Favorites - <span id="favorites-cat"></span></div>
+					<div class="exit-button">X</div>
+					<div class="window-content">
+						<div class="links-list-container link-col-2">
+							<ul id="links-list-1">
+								
+							</ul>
+						</div>
+						<div class="links-list-container links-col-2">
+							<ul id="links-list-2">
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="news" class="window">
+				<div class="window-inner">
+					<div class="title-bar">News</div>
+					<div class="exit-button">X</div>
+					<div class="window-content">
+						<div class="news-list-container">
+							<ul id="news-list">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="time" class="window">
+				<div class="window-inner">
+					<div class="title-bar">Time</div>
+					<div class="exit-button">X</div>
+					<div class="window-content">
+						<div class="time-stamp">
+							
+						</div>
+						<div class="date-stamp">
+							<div class="date-sect weekday">
+								
+							</div>
+							<div class="date-sect month-num">
+								
+							</div>
+							<div class="date-sect year">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="weather" class="window">
+				<div class="window-inner">
+					<div class="title-bar">Weather - <span id="weather-location"></span></div>
+					<div class="exit-button">X</div>
+					<div class="window-content">
+						<div class="weather-symbol">
+							<img id="current-weather-img" alt="Icon">
+						</div>
+						<div class="summary">
+							<div class="temp-sum"></div>
+
+							<div class="air-sum">
+								<div class="air-sum-comp precipitation">
+									Precipitation: <span id="precipitation-val"></span>
+								</div>
+								<div class="air-sum-comp humidity">
+									Humidity: <span id="humidity-val"></span>
+								</div>
+								<div class="air-sum-comp windspeed">
+									Windspeed: <span id="windspeed-val"></span>
+								</div>
+							</div>
+						</div>
+						<div class="weather-description">
+						</div>
+						<div class="forecast-description"></div>
+						<div class="forecast">
+							<div class="forecast-item">
+								<div class="forecast-item-info forecast-time"></div>
+								<div class="forecast-item-info forecast-symbol">
+									<img class="forecast-img alt="">
+								</div>
+								<div class="forecast-item-info forecast-temp"></div>
+								<div class="forecast-item-info forecast-precip">
+									<img src="./icons/weather/raindrop.png" alt="">
+									<span class="forecast-precip-val">
+										
+									</span>
+								</div>
+							</div>
+							<div class="forecast-item">
+								<div class="forecast-item-info forecast-time"></div>
+								<div class="forecast-item-info forecast-symbol">
+									<img class="forecast-img" alt="">
+								</div>
+								<div class="forecast-item-info forecast-temp"></div>
+								<div class="forecast-item-info forecast-precip">
+									<img src="./icons/weather/raindrop.png" alt="">
+									<span class="forecast-precip-val">
+										
+									</span>
+								</div>
+							</div>
+							<div class="forecast-item">
+								<div class="forecast-item-info forecast-time"></div>
+								<div class="forecast-item-info forecast-symbol">
+									<img class="forecast-img" alt="">
+								</div>
+								<div class="forecast-item-info forecast-temp"></div>
+								<div class="forecast-item-info forecast-precip">
+									<img src="./icons/weather/raindrop.png" alt="">
+									<span class="forecast-precip-val">
+										
+									</span>
+								</div>
+							</div>
+							<div class="forecast-item">
+								<div class="forecast-item-info forecast-time"></div>
+								<div class="forecast-item-info forecast-symbol">
+									<img class="forecast-img"alt="">
+								</div>
+								<div class="forecast-item-info forecast-temp"></div>
+								<div class="forecast-item-info forecast-precip">
+									<img src="./icons/weather/raindrop.png" alt="">
+									<span class="forecast-precip-val">
+										
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="searchbar">
+		<div class="glyph">anon34533:<span>~$</span></div>
+		<input id="search-input" spellcheck="false" type="text">
+	</div>
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script src="./js/index.js"></script>
+</body>
+</html>

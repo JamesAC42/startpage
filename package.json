@@ -1,0 +1,26 @@
+{
+  "name": "startpage",
+  "version": "1.0.0",
+  "description": "browser startpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesAC42/startpage.git"
+  },
+  "author": "james",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesAC42/startpage/issues"
+  },
+  "homepage": "https://github.com/JamesAC42/startpage#readme",
+  "dependencies": {
+    "formidable": "^1.1.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "node-fetch": "^1.7.3",
+    "path": "^0.12.7"
+  }
+}
