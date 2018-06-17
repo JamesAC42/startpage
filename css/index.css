@@ -24,8 +24,8 @@ body {
 	font-family: LucidaSansTypewriter;
 	overflow:hidden;
 
-	background-repeat: no-repeat;
 	background-size: cover;
+	background-repeat: no-repeat;
 
 }
 
@@ -239,8 +239,8 @@ div.glyph span {
 div.windows-container {
 
 	position:absolute;
-	top:48%;
-	left:18%;
+	top:48vh;
+	left:18vw;
 
 	height:70vh;
 	width:70vw;
@@ -266,7 +266,7 @@ div.windows-container-inner {
 
 div.window {
 
-	background:#292929;
+	background:#3a3a3a;
 	opacity:0.8;
 
 	position:absolute;
@@ -280,9 +280,39 @@ div.window {
 
 	border:2px solid #E3E3E3;
 
+	border:none;
+
+	background:rgba(255,255,255,0.6);
+
 }
 
-div.window-inner {
+div.window-bg {
+
+	position:absolute;
+
+	margin:0;
+	padding:0;
+
+	overflow:hidden;
+
+	filter:blur(8px);
+
+}
+
+div.window-bg-img {
+
+	position:absolute;
+	top:0;
+	left:0;
+	height:100vh;
+	width:100vw;
+
+	background-size: cover;
+	background-repeat:no-repeat;
+
+}
+
+div.window-inner, div.window-bg-inner {
 
 	position:relative;
 
@@ -298,7 +328,7 @@ div.title-bar {
 	left:0;
 
 	background:#1A85D0;
-	opacity:0.9;
+	opacity:0.7;
 
 	height:15px;
 	width:100%;
@@ -366,6 +396,31 @@ div.window-content {
 
 }
 
+#links-bg {
+
+	top:0;
+	left:0;
+
+	height:35vh;
+	width:40vw;
+
+	transform:translateY(0);
+
+}
+
+#links-bg div.window-bg-inner {
+
+	height:35vh;
+	width:40vw;
+
+}
+
+#links-bg .window-bg-img {
+
+	transform: translate(-18vw, -12vh);
+
+}
+
 #links div.window-inner, #links div.window-content {
 
 	height:35vh;
@@ -424,7 +479,7 @@ div.links-list-container ul li a {
 
 	font-size:10px;
 	font-family:Hellovetica;
-	color:#fff;
+	color:#000;
 
 }
 
@@ -441,6 +496,31 @@ div.links-list-container ul li:hover a{
 
 	bottom:-4px;
 	left:0;
+
+}
+
+#news-bg {
+	
+	height:30vh;
+	width:40vw;
+
+	bottom:-4px;
+	left:0;
+
+	transform:translateY(0);
+
+}
+
+#news-bg div.window-bg-inner {
+
+	height:30vh;
+	width:40vw;
+
+}
+
+#news-bg div.window-bg-img {
+
+	transform: translate(-18vw, -55vh);
 
 }
 
@@ -494,7 +574,7 @@ div.news-list-container {
 
 	font-size:8px;
 	font-family:Hellovetica;
-	color:#fff;
+	color:#000;
 
 }
 
@@ -511,6 +591,31 @@ div.news-list-container {
 
 	top:0;
 	right:0;
+
+}
+
+#time-bg {
+	
+	height:15vh;
+	width:27vw;
+
+	top:0;
+	right:0;
+
+	transform:translateY(0);
+
+}
+
+#time-bg div.window-bg-inner {
+
+	height:15vh;
+	width:27vw;
+
+}
+
+#time-bg div.window-bg-img {
+
+	transform: translate(-61vw, -13vh);
 
 }
 
@@ -536,7 +641,7 @@ div.time-stamp {
 	font-family: RobotoLight;
 	font-size:46px;
 
-	color:#fff;
+	color:#000;
 
 	margin:0;
 	padding:0;
@@ -572,7 +677,7 @@ div.date-sect {
 	font-family: RobotoLight;
 	font-size:12px;
 
-	color:#fff;
+	color:#000;
 
 	margin:0;
 	padding:0;
@@ -586,6 +691,31 @@ div.date-sect {
 
 	bottom:-4px;
 	right:0;
+
+}
+
+#weather-bg {
+	
+	height:50vh;
+	width:27vw;
+
+	bottom:-4px;
+	right:0;
+
+	transform:translateY(0);
+
+}
+
+#weather-bg div.window-bg-inner {
+
+	height:50vh;
+	width:27vw;
+
+}
+
+#weather-bg div.window-bg-img {
+
+	transform: translate(-61vw, -33vh);
 
 }
 
@@ -636,7 +766,7 @@ div.temp-sum {
 	width:9vw;
 	text-align:left;
 
-	color:#fff;
+	color:#000;
 	font-size:46px;
 
 	margin:0;
@@ -654,7 +784,7 @@ div.temp-inf{
 	width:4vw;
 	text-align:left;
 
-	color:#fff;
+	color:#000;
 	font-size:20px;
 
 	margin:0;
@@ -685,7 +815,7 @@ div.air-sum-comp {
 	width:11vw;
 	text-align:left;
 
-	color:#fff;
+	color:#000;
 	font-size:12px;
 
 	margin:0;
@@ -717,7 +847,7 @@ div.weather-description {
 	width:27vw;
 	text-align:center;
 
-	color:#fff;
+	color:#000;
 	font-size:12px;
 
 	margin:0;
@@ -735,7 +865,7 @@ div.forecast-description {
 	width:27vw;
 	text-align: center;
 
-	color:#fff;
+	color:#000;
 	font-size:12px;
 
 	margin:0;
@@ -789,10 +919,10 @@ div.forecast-time {
 	line-height: 5vh;
 	text-align: center;
 
-	color:#fff;
+	color:#000;
 	font-size:14px;
 
-	border-bottom:1px solid #eee;
+	border-bottom:1px solid #333;
 
 }
 
@@ -819,7 +949,7 @@ div.forecast-temp {
 	line-height:10vh;
 	text-align: center;
 
-	color:#fff;
+	color:#000;
 	font-size:18px;
 
 }
@@ -856,7 +986,7 @@ span.forecast-precip-val {
 	line-height:14px;
 	text-align:left;
 
-	color:#fff;
+	color:#000;
 	font-size:14px;
 
 	margin:0;

@@ -1,26 +1,25 @@
 
-var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var months = ["January", "February","March","April","May","June","July","August","September","October","November","December"];
+const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const months = ["January", "February","March","April","May","June","July","August","September","October","November","December"];
 
-var linkData;
+let linkData;
 
-var weatherIcons = {
-	"clear-day":"sunny-white.png",
-	"clear-night":"night.png",
-	"rain":"rain.png", 
-	"snow":"snow.png", 
-	"sleet":"hail.png", 
-	"wind":"wind.png", 
-	"fog":"fog.png", 
-	"cloudy":"cloudy.png", 
-	"partly-cloudy-day":"partlycloudy.png",
-	"partly-cloudy-night":"partlycloudynight.png"
+const weatherIcons = {
+	"clear-day":"sunny",
+	"clear-night":"night",
+	"rain":"rain", 
+	"snow":"snow", 
+	"sleet":"hail", 
+	"wind":"wind", 
+	"fog":"fog", 
+	"cloudy":"cloudy", 
+	"partly-cloudy-day":"partlycloudy",
+	"partly-cloudy-night":"partlycloudynight"
 }
 
-var active = "school";
+let active = "school";
 
-var time;
-var bgAmt = 32;
+let time;
 
 function loadLinks(cat) {
 	$("div.title-bar").css("background",linkData[cat]["color"]);
@@ -123,7 +122,7 @@ function loadWeather(data) {
 	$("#humidity-val").text(Math.round(humidity * 100) + "%");
 	$("#windspeed-val").text(windSpeed + " MPH");
 
-	$("#current-weather-img").attr("src","./icons/weather/" + weatherIcons[icon]);
+	$("#current-weather-img").attr("src","./icons/weather/" + weatherIcons[icon] + "-black.png");
 
 	$(".weather-description").text(summary);
 
@@ -151,12 +150,26 @@ function loadWeather(data) {
 		let $forecastItem = forecastItems[i];
 
 		$(this).children(".forecast-time").text(hours + ":" + minutes);
-		$(this).children(".forecast-symbol").children().attr("src","./icons/weather/" + weatherIcons[icon]);
+		$(this).children(".forecast-symbol").children().attr("src","./icons/weather/" + weatherIcons[icon] + "-black.png");
 		$(this).children(".forecast-temp").text(temperature + "\u00B0");
 		$(this).children(".forecast-precip").children(".forecast-precip-val").text(Math.round(precipProbability * 100) + "%");
 
 	});
 
+}
+
+function setBackground() {
+	$.post('/getBackgroundAmount', {}, response => {
+		if(response) {
+			
+			let files = JSON.parse(response);
+			let bgNum = Math.floor((Math.random() * (files.length + 1)));
+			let fileName = files[bgNum];
+			$("body").css("background-image", "url('./backgrounds/" + fileName + "')");
+			$("div.window-bg-img").css("background-image", "url('./backgrounds/" + fileName + "')");
+
+		}
+	})
 }
 
 
@@ -305,18 +318,17 @@ $(document).ready(function(){
 	});
 
 	$("div.exit-button").click(function() {	
-	      	      
-		var el = $(this).parent().parent();
-		el.remove();
+								
+		const name = $(this).parent().parent().attr("id");
+		$("#" + name).remove();
+		$("#" + name + "-bg").remove();
 
 	});
 	
-	let bgNum = Math.floor((Math.random() * (bgAmt + 1)));
-	$("body").css("background-image", "url('/backgrounds/bg-" + bgNum + ".jpg')");
-
 	getWeather();
 	getFavorites();
 	getNews();
+	setBackground();
 
 	$("#search-input").focus();
 

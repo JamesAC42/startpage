@@ -1,25 +1,25 @@
-var http = require("http");
-var fs = require("fs");
-var formidable = require("formidable");
-var path = require("path");
-var fetch = require("node-fetch");
+const http = require("http");
+const fs = require("fs");
+const formidable = require("formidable");
+const path = require("path");
+const fetch = require("node-fetch");
+const https = require("https");
 
-var weatherKey = "";
-var newsKey = "";
+const weatherHost = "https://api.darksky.net";
+const weatherKey = "";
+const weatherPath = "/forecast/";
+const weatherParams = "?exclude=[minutely,daily,alerts,flags]"
 
-var weatherHost = "https://api.darksky.net";
-var weatherPath = "/forecast/" + weatherKey + "/";
-var weatherParams = "?exclude=[minutely,daily,alerts,flags]"
-
-var newsHost = "https://newsapi.org";
-var newsPath = "/v2/top-headlines";
-var newsParams = "?sources=google-news&lang=en&apiKey=" + newsKey;
+const newsHost = "https://newsapi.org";
+const newsKey = "";
+const newsPath = "/v2/top-headlines";
+const newsParams = "?sources=google-news&lang=en&apiKey=";
 
 const agent = new https.Agent({
 	rejectUnauthorized: false
 });
 
-var server = http.createServer(function(req, res) {
+const server = http.createServer(function(req, res) {
 	if (req.method.toLowerCase() == "get") {
 		respondPage(req, res);
 	} else {
@@ -28,13 +28,13 @@ var server = http.createServer(function(req, res) {
 });
 
 function respondPage(req, res) {
-	var filePath = req.url;
+	let filePath = req.url;
 	if (filePath == "/") {
 		filePath = "/index.html";
 	}
 	filePath = __dirname + filePath;
-	var extname = path.extname(filePath);
-	var contentType = "text/html";
+	const extname = path.extname(filePath);
+	let contentType = "text/html";
 	switch (extname) {
 		case '.js':
 			contentType = 'text/javascript';
@@ -58,20 +58,32 @@ function respondPage(req, res) {
 }
 
 function postData(req, res) {
-	if (req.url == "/getWeather") {
-		returnWeather(req, res);
-	} else if (req.url == "/getFavorites") {
-		returnFavorites(req, res);
-	} else if (req.url == "/updateFavorites") {
-		updateFavorites(req, res);
-	} else if (req.url == "/getNews") {
-		returnNews(req, res);
+
+	switch(req.url) {
+		case "/getWeather":
+			returnWeather(req, res);
+			break;
+		case "/getFavorites":
+			returnFavorites(req, res);
+			break;
+		case "/updateFavorites":
+			updateFavorites(req, res);
+			break;
+		case "/getNews":
+			returnNews(req, res);
+			break;
+		case "/getBackgroundAmount":
+			returnBackgroundAmount(req, res);
+			break;
+		default:
+			res.writeHead(500);
+			res.end();
 	}
 }
 
 function returnNews(req, res) {
 	res.writeHead(200, {'Content-Type':'text/plain'});
-	reqUrl = newsHost + newsPath + newsParams;
+	reqUrl = newsHost + newsPath + newsParams + newsKey;
 	fetch(reqUrl, {agent})
 		.then(function (fetch_res) {
 			return fetch_res.text();
@@ -88,7 +100,7 @@ function returnWeather(req, res) {
 		let latitude = fields.latitude;
 		let longitude = fields.longitude;
 
-		let reqUrl = weatherHost + weatherPath + latitude + "," + longitude + weatherParams;
+		let reqUrl = weatherHost + weatherPath + weatherKey + latitude + "," + longitude + weatherParams;
 
 		res.writeHead(200, {'Content-Type': 'text/plain'});
 
@@ -115,11 +127,22 @@ function returnFavorites(req, res) {
 }
 
 function updateFavorites(req, res) {
-	var form = new formidable.IncomingForm();
+	const form = new formidable.IncomingForm();
 	form.parse(req, function(err, fields, files) {
 		let links = JSON.parse(fields.linkJSON);
 		fs.writeFile("./favorites.json", JSON.stringify(links, null, '	'), "utf8", callback => {return;});
 		res.end();
+	});
+}
+
+function returnBackgroundAmount(req, res) {
+	fs.readdir('./backgrounds', (err, files) => {
+		if(err) {
+			res.writeHead(500);
+			res.end();
+		}
+		res.writeHead(200, {'Content-Type': 'text/plain'});
+		res.end(JSON.stringify(files));
 	});
 }
 
