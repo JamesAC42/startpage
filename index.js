@@ -42,6 +42,12 @@ function respondPage(req, res) {
 		case '.css':
 			contentType = 'text/css';
 			break;
+		case '.png':
+			contentType = 'image/png';
+			break;
+		case '.jpg':
+			contentType = 'image/jpg';
+			break;
 	}
 	fs.exists(filePath, (exists) => {
 		if (exists) {
@@ -100,7 +106,7 @@ function returnWeather(req, res) {
 		let latitude = fields.latitude;
 		let longitude = fields.longitude;
 
-		let reqUrl = weatherHost + weatherPath + weatherKey + latitude + "," + longitude + weatherParams;
+		let reqUrl = weatherHost + weatherPath + weatherKey + "/" + latitude + "," + longitude + weatherParams;
 
 		res.writeHead(200, {'Content-Type': 'text/plain'});
 

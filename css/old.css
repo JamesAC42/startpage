@@ -21,7 +21,7 @@
 
 body {
 
-	font-family: LucidaSansTypewriter;
+	font-family: RobotoLight, sans-serif;
 	overflow:hidden;
 
 	background-size: cover;
@@ -278,10 +278,6 @@ div.window {
 	-moz-box-shadow: 0px 6px 32px -2px rgba(0,0,0,0.75);
 	box-shadow: 0px 6px 32px -2px rgba(0,0,0,0.75);
 
-	-webkit-box-shadow: 0px 10px 34px -18px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 10px 34px -18px rgba(0,0,0,0.75);
-	box-shadow: 0px 10px 34px -18px rgba(0,0,0,0.75);
-
 	border:2px solid #E3E3E3;
 
 	border:none;
@@ -299,7 +295,7 @@ div.window-bg {
 
 	overflow:hidden;
 
-	filter:blur(20px);
+	filter:blur(8px);
 
 }
 
@@ -470,8 +466,8 @@ div.links-list-container ul li {
 
 	display:block;
 
-	height:40px;
-	line-height:40px;
+	height:26px;
+	line-height:26px;
 
 	text-align:center;
 
@@ -481,8 +477,7 @@ div.links-list-container ul li a {
 
 	text-decoration:none;
 
-	font-size:18px;
-	font-family:'RobotoLight', sans-serif;
+	font-size:20px;
 	color:#000;
 
 }
@@ -563,8 +558,8 @@ div.news-list-container {
 
 	display:block;
 
-	height:38px;
-	line-height: 38px;
+	height:28px;
+	line-height: 28px;
 
 	white-space: nowrap;
 
@@ -576,8 +571,7 @@ div.news-list-container {
 
 	text-decoration:none;
 
-	font-size:14px;
-	font-family:'RobotoLight', sans-serif;
+	font-size:16px;
 	color:#000;
 
 }

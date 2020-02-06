@@ -92,7 +92,6 @@ function getWeather() {
 }
 
 function loadWeather(data) {
-
 	let currently = data.currently;
 	let time = currently["time"];
 	let summary = currently["summary"];

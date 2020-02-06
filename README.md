@@ -22,7 +22,7 @@ If you want to use this then you need to get API keys from [darksky.net](https:/
 
 You can also add however many background you want to the backgrounds folder and it'll use a random one each time the page loads.
 
-
+ALSO: add favorites in the favorites.json file. Use the settings->links as an example of how to add links to each category. 
 
 
 
