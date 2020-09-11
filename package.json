@@ -21,7 +21,7 @@
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "https": "^1.0.0",
-    "node-fetch": "^1.7.3",
+    "node-fetch": "^2.6.1",
     "path": "^0.12.7"
   }
 }
